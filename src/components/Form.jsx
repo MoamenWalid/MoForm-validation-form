@@ -13,7 +13,6 @@ const Form = () => {
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     }
-    // movaly -> func to validation //
   }, movaly)
 
   return (

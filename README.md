@@ -1,8 +1,45 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Custom Hook Validation Form
+  #### To install Project
+  ```
+    npm i
+    npm start
+  ```
 
-Currently, two official plugins are available:
+  #### How To Use It !
+  - First custom hook called `useMoForm`
+  - Second function to validation called `movaly`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  ``` jsx
+    useMoForm({
+      inisialState: {
+        nameUser: '',
+        emailUser: '',
+        passwordUser: ''
+      },
+      onSubmit: (values) => {
+        alert(JSON.stringify(values, null, 2));
+      }
+      // movaly -> func to validation //
+    }, movaly)
+  ```
+
+  `Carful: inisialState keys inside useMoForm hook must be same input name`
+
+  ```jsx
+    inisialState: {
+        nameUser: '',
+        emailUser: '',
+        passwordUser: ''
+      },
+
+      /// These is wrong
+      <input name="name" />
+      <input name="email" />
+      <input name="password" />
+
+      /// These is true
+      <input name="nameUser" />
+      <input name="emailUser" />
+      <input name="passwordUser" />
+  ```
